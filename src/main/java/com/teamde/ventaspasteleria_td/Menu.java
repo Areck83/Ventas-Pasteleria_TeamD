@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class Menu extends BorderPane {
     Label titulo = new Label("Bienvenido");
@@ -18,8 +19,11 @@ public class Menu extends BorderPane {
     Label lb6;
     GridPane menu;
     Integer tiempo;
+    Button butVenta;
 
-    public Menu() {
+    public Menu() throws InterruptedException {
+
+        isPressed();
         this.titulo.getStyleClass().add("label-titulo-Grande");
         this.titulo.setLayoutX(430.0);
         this.titulo.setLayoutY(40.0);
@@ -30,17 +34,16 @@ public class Menu extends BorderPane {
         });
 
         //hilo para regresar al login
-        //Proceso proceso1 = new Proceso();
-        //proceso1.start();
+
 
         butGrafica.setGraphic(new ImageView("Grafica.jpeg"));
         butGrafica.setLayoutX(50.0);
         butGrafica.setLayoutY(100.0);
         butGrafica.getStyleClass().add("cssBoton");
         this.lb1 = new Label("Graficas");
-        Button butVenta = new Button();
+        butVenta = new Button();
         butVenta.setOnAction((evtm) -> {
-            //this.crearVentanaVenta();
+
         });
 
         butVenta.setGraphic(new ImageView("Venta.jpeg"));
@@ -52,9 +55,11 @@ public class Menu extends BorderPane {
         Button butPedido = new Button();
         butPedido.setOnAction((evtm) -> {
             //proceso1.reiniciar();
-            System.out.println("SSS");
+
 
         });
+
+        //espera();
 
         butPedido.setGraphic(new ImageView("AgregarPedido.jpeg"));
         butPedido.setMaxSize(2.0, 2.0);
@@ -91,6 +96,7 @@ public class Menu extends BorderPane {
         butSalir.setOnAction((evt) -> {
             //cerrar
         });
+
 
         butSalir.setGraphic(new ImageView("Salir.jpeg"));
         butSalir.setMaxSize(5.0, 5.0);
@@ -173,5 +179,15 @@ public class Menu extends BorderPane {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+    }*/
+   /* private void espera() throws InterruptedException {
+        Proceso hilo = new Proceso();
+        butVenta.setOnMouseClicked(evtm->{
+                try {
+                    //hilo.esperar();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+        });
     }*/
 }

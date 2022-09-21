@@ -1,5 +1,6 @@
 package com.teamde.ventaspasteleria_td;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -69,23 +71,32 @@ public class Login extends BorderPane {
         this.organizacion.setCenter(this.formulario);
         this.organizacion.setBottom(this.iniciar);
         this.iniciar.setOnMouseClicked((evtm) -> {
-            this.comprobar();
+            try {
+                this.comprobar();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         });
         this.password.setOnAction((evt) -> {
-            this.comprobar();
+            try {
+                this.comprobar();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         });
         this.setLeft(imagen);
         this.setCenter(this.organizacion);
     }
 
-    public void comprobar() {
+    public void comprobar() throws InterruptedException {
         String user = this.tUsuario.getText();
         String pass = this.password.getText();
         if (user.equals("admin") && pass.equals("password")) {
             Stage stage1 = new Stage();
             Pane menu = new Menu();
-            Scene scene = new Scene(menu, 900.0, 500.0);
-            //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
+            scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
             stage1.setTitle("Login");
             stage1.setScene(scene);
             stage1.setResizable(false);
