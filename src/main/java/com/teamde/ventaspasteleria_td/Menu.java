@@ -178,6 +178,7 @@ public class Menu extends BorderPane {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.setResizable(false);
+        System.out.println("borarr2");
         stage.show();
     }*/
    /* private void espera() throws InterruptedException {
