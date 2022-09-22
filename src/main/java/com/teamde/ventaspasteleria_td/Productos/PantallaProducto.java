@@ -10,15 +10,14 @@ import javafx.scene.layout.HBox;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PantallaAgregarProducto extends BorderPane {
+public class PantallaProducto extends BorderPane {
     private Label lTitulo;
-    private Label label;
-    private Button bAgregarUsuario;
+    private Button bAgregarProducto;
     private HBox barra;
-   private TableView tablaUsuarios;
+   private TableView<Producto> tablaProducto;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaAgregarProducto() {
+    public PantallaProducto() {
         this.inicializarComponentes();
     }
 
@@ -28,9 +27,9 @@ public class PantallaAgregarProducto extends BorderPane {
         this.lTitulo.setPrefHeight(70.0);
         //Pasteles listaHelper = new Pasteles();
         //listaHelper.crearLista();
-        List<Producto> listaUsuarioHelper = new ArrayList<>();
-        TablaProducto tablaUsuarioHelper = new TablaProducto(listaUsuarioHelper);
-        this.tablaUsuarios = tablaUsuarioHelper.getTablaUsuario();
+        List<Producto> listaProductoHelper = new ArrayList<>();
+        TablaProducto tablaProducto1 = new TablaProducto(listaProductoHelper);
+        this.tablaProducto = tablaProducto1.getTablaProductos();
 
         //TableView tablaPasteles1 = this.tablaPasteles.getTablaPasteles();
         //TableView tablaPasteles1 = new TableView();
@@ -43,18 +42,18 @@ public class PantallaAgregarProducto extends BorderPane {
             }
 
         });*/
-        this.label = new Label();
-        this.bAgregarUsuario = new Button("Agregar Usuario");
-        this.bAgregarUsuario.getStyleClass().add("cssBoton");
-        this.bAgregarUsuario.setOnAction((evtm) -> {
+
+        this.bAgregarProducto = new Button("Agregar Producto");
+        this.bAgregarProducto.getStyleClass().add("cssBoton");
+        this.bAgregarProducto.setOnAction((evtm) -> {
            // this.crearPastel();
         });
         this.barra = new HBox();
         this.barra.setSpacing(200.0);
         this.barra.setAlignment(Pos.CENTER);
-        this.barra.getChildren().addAll(lTitulo, bAgregarUsuario);
+        this.barra.getChildren().addAll(lTitulo, bAgregarProducto);
         this.setTop(barra);
-        this.setLeft(tablaUsuarios);
+        this.setLeft(tablaProducto);
     }
     //private void editarPastel(Usuario usuario, int seleccion) {
     /*private void editarUsuario() {

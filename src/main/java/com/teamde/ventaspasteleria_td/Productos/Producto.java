@@ -4,18 +4,19 @@ public class Producto {
     private String ID;
     private String nombre;
     private String precio;
-
-    private Double Cantidad;
-
+    private Double cantidad;
+    private String detalles;
+    private String IDproveedor;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String usuario, String contrasenia) {
+    public Producto(String ID, String nombre, String precio, Double cantidad, String detalles, String IDproveedor) {
+        this.ID = ID;
         this.nombre = nombre;
-        this.usuario = usuario;
-        this.contrasenia = contrasenia;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.detalles = detalles;
+        this.IDproveedor = IDproveedor;
     }
-    
-
 }

@@ -14,7 +14,7 @@ public class PantallaUsuario extends BorderPane {
     private Label lTitulo;
     private Button bAgregarUsuario;
     private HBox barra;
-   private TableView tablaUsuarios;
+   private TableView<Usuario> tablaUsuarios;
     //private ObservableList<Pastel> pasteles;
 
     public PantallaUsuario() {

@@ -13,17 +13,17 @@ import javafx.util.Callback;
 import java.util.List;
 
 public class TablaProducto {
-    private TableView<Producto> tablaUsuarios;
-        private ObservableList<Producto> usuarios = FXCollections.observableArrayList();
+    private TableView<Producto> tablaProductos;
+        private ObservableList<Producto> productos = FXCollections.observableArrayList();
         //private Pastel pastel;
 
         // Agregar a los usuarios desde la base de datos con ayuda del helper
 
-        public TablaProducto(List<Producto> listaUsuario) {
-            this.usuarios.addAll(listaUsuario);
-            this.tablaUsuarios = new TableView<>();
-            this.tablaUsuarios.getStyleClass().add("table-cell");
-            this.tablaUsuarios.setPrefWidth(700.0);
+        public TablaProducto(List<Producto> listaProducto) {
+            this.productos.addAll(listaProducto);
+            this.tablaProductos = new TableView<>();
+            this.tablaProductos.getStyleClass().add("table-cell");
+            this.tablaProductos.setPrefWidth(700.0);
             this.crearTabla();
         }
         //crear la tabla con los atributos del usuario
@@ -34,22 +34,22 @@ public class TablaProducto {
             //Corregir las tablas en caso de ser necesario
             TableColumn<Producto, String> colId = new TableColumn<Producto, String>("ID");
             TableColumn<Producto, String> colNombre = new TableColumn<Producto, String>("Nombre");
-            TableColumn<Producto, String> colContr = new TableColumn<Producto, String>("Contrasenia");
-            TableColumn<Producto, String> colCorreo = new TableColumn<Producto, String>("Correo");
-            TableColumn<Producto, String> colTelefono = new TableColumn<Producto, String>("Telefono");
+            TableColumn<Producto, String> colPrecio= new TableColumn<Producto, String>("Contrasenia");
+            TableColumn<Producto, String> colCantidad = new TableColumn<Producto, String>("Correo");
+            TableColumn<Producto, String> colIdProveedor = new TableColumn<Producto, String>("Telefono");
             TableColumn<Producto, Void> colEliminar = new TableColumn<Producto, Void>("Eliminar");
 
             colEliminar.setPrefWidth(130.0);
             colNombre.setPrefWidth(120.0);
-            colContr.setPrefWidth(120.0);
-            colCorreo.setPrefWidth(120.0);
-            colTelefono .setPrefWidth(120.0);
+            colPrecio.setPrefWidth(120.0);
+            colCantidad.setPrefWidth(120.0);
+            colIdProveedor .setPrefWidth(120.0);
 
             colId.setCellValueFactory(new PropertyValueFactory<Producto, String>("id"));
             colNombre.setCellValueFactory(new PropertyValueFactory<Producto, String>("nombre"));
-            colContr.setCellValueFactory(new PropertyValueFactory<Producto, String>("password"));
-            colCorreo.setCellValueFactory(new PropertyValueFactory<Producto, String>("correo"));
-            colTelefono.setCellValueFactory(new PropertyValueFactory<Producto, String>("telefono"));
+            colPrecio.setCellValueFactory(new PropertyValueFactory<Producto, String>("password"));
+            colCantidad.setCellValueFactory(new PropertyValueFactory<Producto, String>("correo"));
+            colIdProveedor.setCellValueFactory(new PropertyValueFactory<Producto, String>("telefono"));
 
             //Boton de aliminar
             Callback<TableColumn<Producto, Void>, TableCell<Producto, Void>> cellFactory1 = new Callback<TableColumn<Producto, Void>, TableCell<Producto, Void>>() {
@@ -107,8 +107,8 @@ public class TablaProducto {
 
             //colEliminar.setCellFactory(cellFactory1);
 
-            this.tablaUsuarios.getColumns().addAll(colId, colNombre, colContr, colCorreo, colTelefono);
-            this.tablaUsuarios.getColumns().add(colEliminar);
+            this.tablaProductos.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
+            this.tablaProductos.getColumns().add(colEliminar);
         }
         //Metodos de la tabla
         /*public void agregarPastel(Pastel pastel, int seleccion) {
@@ -127,8 +127,8 @@ public class TablaProducto {
 
         }*/
 
-        public TableView<Producto> getTablaUsuario() {
-            return this.tablaUsuarios;
+        public TableView<Producto> getTablaProductos() {
+            return this.tablaProductos;
         }
 /*
         public int total() {
