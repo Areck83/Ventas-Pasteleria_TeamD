@@ -27,65 +27,85 @@ public class MenuExpandible extends ToolBar {
 
     //Constructor
     public MenuExpandible(){
-        Background fondoNormal = new Background(new BackgroundFill(Color.valueOf("#ccd5ae"), new CornerRadii(0), new Insets(0)));
-        Background fondoExpandido = new Background(new BackgroundFill(Color.valueOf("#e9edc9"), new CornerRadii(0), new Insets(0)));
-        URL rimagenExpandir = getClass().getResource("lines.png");
+        Background fondoNormal = new Background(new BackgroundFill(Color.valueOf("36241C"), new CornerRadii(0), new Insets(0)));
+        Background fondoExpandido = new Background(new BackgroundFill(Color.valueOf("422C22"), new CornerRadii(0), new Insets(0)));
+        URL rimagenExpandir = getClass().getResource("menu.png");
+        URL rimagenExpandido = getClass().getResource("menu-close.png");
 
         ImageView iconoExpandir = new ImageView(new Image(rimagenExpandir.toExternalForm()));
+        ImageView iconoExpandido = new ImageView(new Image(rimagenExpandido.toExternalForm()));
         //ImageView iconoExpandir = new ImageView(new Image(getClass().getResource("lines.png").toExternalForm()));
         iconoExpandir.setFitWidth(32);
         iconoExpandir.setFitHeight(32);
+        iconoExpandido.setFitWidth(32);
+        iconoExpandido.setFitHeight(32);
 
-        ImageView iconoOpc1 = new ImageView(new Image(getClass().getResource("usuario.png").toExternalForm()));
-        ImageView iconoOpc2 = new ImageView(new Image(getClass().getResource("usuario.png").toExternalForm()));
-        ImageView iconoOpc3 = new ImageView(new Image(getClass().getResource("usuario.png").toExternalForm()));
+        ImageView iconoOpcionBloqueo = new ImageView(new Image(getClass().getResource("lock.png").toExternalForm()));
+        ImageView iconoOpcionInfo = new ImageView(new Image(getClass().getResource("information.png").toExternalForm()));
+        ImageView iconoOpcionError = new ImageView(new Image(getClass().getResource("error-base.png").toExternalForm()));
+        ImageView iconoOpcionSalir = new ImageView(new Image(getClass().getResource("exit.png").toExternalForm()));
 
-        String estiloBoton = "-fx-text-fill: white;  -fx-font-size: 11pt";
+        String estiloBoton = "-fx-text-fill: black;  -fx-font-size: 12pt";
 
-        //Opciones del boton 1
-        Button opcion1 = new Button("Agregar estudiante");
-        opcion1.setGraphic(iconoOpc1);
-        opcion1.setAlignment(Pos.CENTER_LEFT);
-        opcion1.setGraphicTextGap(30);
-        opcion1.setBackground(fondoNormal);
-        opcion1.setStyle(estiloBoton);
-        opcion1.setTooltip(new Tooltip("Agregar estudiante"));
+        //Opciones del boton bloqueo
+        Button opcionBloqueo = new Button("BLOQ SYS");
+        opcionBloqueo.setGraphic(iconoOpcionBloqueo);
+        opcionBloqueo.setAlignment(Pos.CENTER_LEFT);
+        opcionBloqueo.setGraphicTextGap(30);
+        opcionBloqueo.setBackground(fondoNormal);
+        opcionBloqueo.setStyle(estiloBoton);
+        opcionBloqueo.setTooltip(new Tooltip("Evitar acceso no autorizado en mi ausencia"));
 
-        opcion1.setOnMouseEntered(evt-> {
-            opcion1.setBackground(fondoExpandido);
+        opcionBloqueo.setOnMouseEntered(evt-> {
+            opcionBloqueo.setBackground(fondoExpandido);
         });
-        opcion1.setOnMouseExited(evt-> {
-            opcion1.setBackground(fondoNormal);
-        });
-
-        Button opcion2 = new Button("Agregar profesor");
-        opcion2.setGraphic(iconoOpc2);
-        opcion2.setAlignment(Pos.CENTER_LEFT);
-        opcion2.setGraphicTextGap(30);
-        opcion2.setBackground(fondoNormal);
-        opcion2.setStyle(estiloBoton);
-        opcion2.setTooltip(new Tooltip("Agregar profesor"));
-
-        opcion2.setOnMouseEntered(evt-> {
-            opcion2.setBackground(fondoExpandido);
-        });
-        opcion2.setOnMouseExited(evt-> {
-            opcion2.setBackground(fondoNormal);
+        opcionBloqueo.setOnMouseExited(evt-> {
+            opcionBloqueo.setBackground(fondoNormal);
         });
 
-        Button opcion3 = new Button("Agendar curso");
-        opcion3.setGraphic(iconoOpc3);
-        opcion3.setAlignment(Pos.CENTER_LEFT);
-        opcion3.setGraphicTextGap(30);
-        opcion3.setBackground(fondoNormal);
-        opcion3.setStyle(estiloBoton);
-        opcion3.setTooltip(new Tooltip("Agregar estudiante"));
+        Button opcionInformacion = new Button("INFO");
+        opcionInformacion.setGraphic(iconoOpcionInfo);
+        opcionInformacion.setAlignment(Pos.CENTER_LEFT);
+        opcionInformacion.setGraphicTextGap(30);
+        opcionInformacion.setBackground(fondoNormal);
+        opcionInformacion.setStyle(estiloBoton);
+        opcionInformacion.setTooltip(new Tooltip("Ver manual de usuario"));
 
-        opcion3.setOnMouseEntered(evt-> {
-            opcion3.setBackground(fondoExpandido);
+        opcionInformacion.setOnMouseEntered(evt-> {
+            opcionInformacion.setBackground(fondoExpandido);
         });
-        opcion3.setOnMouseExited(evt-> {
-            opcion3.setBackground(fondoNormal);
+        opcionInformacion.setOnMouseExited(evt-> {
+            opcionInformacion.setBackground(fondoNormal);
+        });
+
+        Button opcionError = new Button("ERRORES?");
+        opcionError.setGraphic(iconoOpcionError);
+        opcionError.setAlignment(Pos.CENTER_LEFT);
+        opcionError.setGraphicTextGap(30);
+        opcionError.setBackground(fondoNormal);
+        opcionError.setStyle(estiloBoton);
+        opcionError.setTooltip(new Tooltip("Informar de problemas"));
+
+        opcionError.setOnMouseEntered(evt-> {
+            opcionError.setBackground(fondoExpandido);
+        });
+        opcionError.setOnMouseExited(evt-> {
+            opcionError.setBackground(fondoNormal);
+        });
+
+        Button opcionSalir = new Button("SALIR");
+        opcionSalir.setGraphic(iconoOpcionSalir);
+        opcionSalir.setAlignment(Pos.CENTER_LEFT);
+        opcionSalir.setGraphicTextGap(30);
+        opcionSalir.setBackground(fondoNormal);
+        opcionSalir.setStyle(estiloBoton);
+        opcionSalir.setTooltip(new Tooltip("Cerrar este sistema (Sirve para reinicio)"));
+
+        opcionSalir.setOnMouseEntered(evt-> {
+            opcionInformacion.setBackground(fondoExpandido);
+        });
+        opcionSalir.setOnMouseExited(evt-> {
+            opcionInformacion.setBackground(fondoNormal);
         });
 
         //Boton de el menu hamburguesa
@@ -95,19 +115,28 @@ public class MenuExpandible extends ToolBar {
         botonH.setStyle(estiloBoton);
         botonH.setOnAction(evt-> {
             if (!compactado) {
+                botonH.setGraphic(iconoExpandir);
                 setMaxWidth(52);
-                opcion1.setMaxWidth(52);
-                opcion1.setMinWidth(52);
-                opcion2.setMaxWidth(52);
-                opcion2.setMinWidth(52);
-                opcion3.setMaxWidth(52);
-                opcion3.setMinWidth(52);
+                botonH.setMaxWidth(40);
+                botonH.setMinWidth(40);
+                opcionBloqueo.setMaxWidth(52);
+                opcionBloqueo.setMinWidth(52);
+                opcionInformacion.setMaxWidth(52);
+                opcionInformacion.setMinWidth(52);
+                opcionError.setMaxWidth(52);
+                opcionError.setMinWidth(52);
+                opcionSalir.setMaxWidth(52);
+                opcionSalir.setMinWidth(52);
                 Duration duracion = Duration.millis(500);
                 Timeline tiempo = new Timeline(new KeyFrame(duracion, new KeyValue(this.minWidthProperty(), 52, Interpolator.EASE_BOTH)));
                 tiempo.play();
                 setMinWidth(52);
 
             } else {
+                botonH.setGraphic(iconoExpandido);
+                botonH.setMaxWidth(40);
+                botonH.setMinWidth(40);
+                setMaxWidth(52);
                 //setMaxWidth(160);
                 //
                 Duration duracion = Duration.millis(500);
@@ -115,24 +144,27 @@ public class MenuExpandible extends ToolBar {
                 tiempo.play();
                 tiempo.setOnFinished(evt2 -> {
                     setMaxWidth(160);
-                    opcion1.setMaxWidth(150);
-                    opcion1.setMinWidth(150);
-                    opcion2.setMaxWidth(150);
-                    opcion2.setMinWidth(150);
-                    opcion3.setMaxWidth(150);
-                    opcion3.setMinWidth(150);
+                    opcionBloqueo.setMaxWidth(150);
+                    opcionBloqueo.setMinWidth(150);
+                    opcionInformacion.setMaxWidth(150);
+                    opcionInformacion.setMinWidth(150);
+                    opcionError.setMaxWidth(150);
+                    opcionError.setMinWidth(150);
+                    opcionSalir.setMaxWidth(150);
+                    opcionSalir.setMinWidth(150);
                 });
             }
             compactado = !compactado;
         });
         setPadding(new Insets(0));
 
-        opcion1.setMinWidth(150);
-        opcion2.setMinWidth(150);
-        opcion3.setMinWidth(150);
+        opcionBloqueo.setMinWidth(150);
+        opcionInformacion.setMinWidth(150);
+        opcionError.setMinWidth(150);
+        opcionSalir.setMinWidth(150);
         setMinWidth(160);
         setOrientation(Orientation.VERTICAL);
         setBackground(fondoNormal);
-        getItems().addAll(botonH, new Label(""), opcion1, opcion2, opcion3);
+        getItems().addAll(botonH, new Label(""), opcionBloqueo, opcionInformacion, opcionError, opcionSalir);
     }
 }

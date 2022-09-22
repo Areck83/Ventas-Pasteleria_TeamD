@@ -8,15 +8,15 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
 import java.io.FileInputStream;
 
 public class LanzadorSecciones extends BorderPane {
+    Background fondoDashboard = new Background(new BackgroundFill(Color.valueOf("E6D5CE"), new CornerRadii(0), new Insets(0)));
     TilePane contenedorIconos = null;
     Font tipoLetraTitulo;
     Font tipoLetraDescripcion;
@@ -184,6 +184,7 @@ public class LanzadorSecciones extends BorderPane {
         contBD.getChildren().addAll(btnBD, etiBaseDatos, descBaseDatos);
 
         contenedorIconos.getChildren().addAll(contProveedores, contUsuarios, contIngredientes,contEstadisticas, contBD);
+        setBackground(fondoDashboard);
         setCenter(contenedorIconos);
     }
 }

@@ -5,14 +5,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 //Este programa debe de redireccionar correctamente al panel correspondiente al tipo de usuario
-//Para cuestiones de prueba aun no contiene usuarios asignados
 public class Lanzador extends Application {
     @Override
-    public void start(Stage stage){
-        Parent root = new ContenedorGeneral();
+    public void start(Stage stage) throws IOException {
+        Parent root = new Login(stage);
         Scene scene = new Scene(root, 1200, 800);
-        stage.setTitle("Prueba primera iteracion");
+        stage.setTitle("Prueba segunda iter");
         stage.setScene(scene);
         stage.show();
     }

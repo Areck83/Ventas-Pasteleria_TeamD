@@ -16,68 +16,82 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Login extends BorderPane {
-    GridPane formulario;
-    BorderPane organizacion;
-    TextField tUsuario;
-    PasswordField password;
-    Button iniciar;
-    Label lUsuario;
-    Label lContra;
+    GridPane gridForm;
+    BorderPane borderOrganizacion;
+    TextField txtUsuario;
+    PasswordField txtPass;
+    Button btnIniciar;
+    Label lblUsuario;
+    Label lblPass;
     Stage stage;
 
     public Login(Stage stage) throws IOException {
+        //Inicialización de componentes
         this.stage = stage;
-        this.organizacion = new BorderPane();
-        this.formulario = new GridPane();
-        this.iniciar = new Button("Iniciar sesion");
-        ImageView imagen = new ImageView("LogoP.png");
+        this.borderOrganizacion = new BorderPane();
+        this.gridForm = new GridPane();
+        this.btnIniciar = new Button("Iniciar sesion");
+
+        ImageView imagen = new ImageView("cake.png");
         imagen.setFitWidth(450.0);
         imagen.setFitHeight(500.0);
         imagen.setX(0.0);
-        this.iniciar.getStyleClass().add("cssBoton");
-        this.iniciar.setMaxWidth(171.0);
-        this.iniciar.setMinWidth(170.0);
-        this.iniciar.setMaxHeight(41.0);
-        this.iniciar.setMinHeight(40.0);
-        this.tUsuario = new TextField();
-        this.tUsuario.getStyleClass().add("text-field");
-        this.tUsuario.setPromptText("Ingresa el usuario");
-        this.password = new PasswordField();
-        this.password.getStyleClass().add("text-field");
-        this.password.setPromptText("Ingresa la contraseña");
-        this.lUsuario = new Label("Usuario: ");
-        this.lUsuario.getStyleClass().add("label");
-        this.lContra = new Label("Contraseña: ");
-        this.lContra.getStyleClass().add("label");
+        //this.btnIniciar.getStyleClass().add("cssBoton"); No usar estilos hasta el final
 
-        ImageView iuser = new ImageView("User.png");
+        //Boton para iniciar sesion
+        this.btnIniciar.setMaxWidth(171.0);
+        this.btnIniciar.setMinWidth(170.0);
+        this.btnIniciar.setMaxHeight(41.0);
+        this.btnIniciar.setMinHeight(40.0);
+
+        //Ingreso de datos del usuario
+        this.txtUsuario = new TextField();
+        this.txtUsuario.getStyleClass().add("text-field");
+        this.txtUsuario.setPromptText("Ingresa el usuario");
+
+        this.txtPass = new PasswordField();
+        this.txtPass.getStyleClass().add("text-field");
+        this.txtPass.setPromptText("Ingresa la contraseña");
+
+        //Titulo de los campos en el programa
+        this.lblUsuario = new Label("Usuario: ");
+        this.lblUsuario.getStyleClass().add("label");
+
+        this.lblPass = new Label("Contraseña: ");
+        this.lblPass.getStyleClass().add("label");
+
+        ImageView iuser = new ImageView("usuario_login.png");
         iuser.setFitWidth(150.0);
         iuser.setFitHeight(150.0);
-        this.formulario.setVgap(5.0);
-        this.formulario.setHgap(5.0);
-        this.formulario.getStyleClass().add("root");
-        this.formulario.add(this.lUsuario, 3, 5);
-        this.formulario.add(this.tUsuario, 4, 5);
-        this.formulario.add(this.lContra, 3, 20);
-        this.formulario.add(this.password, 4, 20);
+
+        this.gridForm.setVgap(5.0);
+        this.gridForm.setHgap(5.0);
+        //this.gridForm.getStyleClass().add("root");
+        this.gridForm.add(this.lblUsuario, 3, 5);
+        this.gridForm.add(this.txtUsuario, 4, 5);
+        this.gridForm.add(this.lblPass, 3, 20);
+        this.gridForm.add(this.txtPass, 4, 20);
+
         Label test = new Label();
         test.setGraphic(iuser);
         test.setPrefHeight(175.0);
-        this.organizacion.setTop(test);
+        this.borderOrganizacion.setTop(test);
         test.setTranslateX(175.0);
         test.setTranslateY(10.0);
-        this.iniciar.setTranslateX(155.0);
-        this.iniciar.setTranslateY(-70.0);
-        this.organizacion.setCenter(this.formulario);
-        this.organizacion.setBottom(this.iniciar);
-        this.iniciar.setOnMouseClicked((evtm) -> {
+
+        this.btnIniciar.setTranslateX(155.0);
+        this.btnIniciar.setTranslateY(-70.0);
+
+        this.borderOrganizacion.setCenter(this.gridForm);
+        this.borderOrganizacion.setBottom(this.btnIniciar);
+        this.btnIniciar.setOnMouseClicked((evtm) -> {
             try {
                 this.comprobar();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });
-        this.password.setOnAction((evt) -> {
+        this.txtPass.setOnAction((evt) -> {
             try {
                 this.comprobar();
             } catch (InterruptedException e) {
@@ -85,18 +99,19 @@ public class Login extends BorderPane {
             }
         });
         this.setLeft(imagen);
-        this.setCenter(this.organizacion);
+        this.setCenter(this.borderOrganizacion);
     }
 
     public void comprobar() throws InterruptedException {
-        String user = this.tUsuario.getText();
-        String pass = this.password.getText();
-        if (user.equals("admin") && pass.equals("password")) {
+        //Esta configuración es temporal mientras que se hace conexión a la BD.
+        String user = this.txtUsuario.getText();
+        String pass = this.txtPass.getText();
+        if (user.equals("admin") && pass.equals("txtPass")) {
             Stage stage1 = new Stage();
-            Pane menu = new Menu();
+            Pane menu = new ContenedorGeneral();
             Rectangle2D screenBounds = Screen.getPrimary().getBounds();
             Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
-            scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+            //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
             stage1.setTitle("Login");
             stage1.setScene(scene);
             stage1.setResizable(false);

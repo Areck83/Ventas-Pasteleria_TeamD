@@ -7,7 +7,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 
-//Panel completo sin segmentar
+//Panel inicial tras desbloqueo
 public class ContenedorGeneral extends BorderPane {
     MenuExpandible menuExpandible = new MenuExpandible();
     TabPane tabPane = new TabPane();
