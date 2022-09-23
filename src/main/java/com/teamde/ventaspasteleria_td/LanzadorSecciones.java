@@ -118,9 +118,9 @@ public class LanzadorSecciones extends BorderPane {
         btnProveedores.setMaxWidth(200);
         btnProveedores.setMaxWidth(200);
         btnProveedores.setOnAction(e ->{
-            //ContenedorPanelProveedores panelProv = new ContenedorPanelProveedores(tabPane, tab);
-            //tab.setContent(panelProv);
-            //tab.setText("Proveedores");
+            ContenedorProveedores panelProv = new ContenedorProveedores(tabPane, tab);
+            tab.setContent(panelProv);
+            tab.setText("Proveedores");
         });
 
         btnUsuarios = new Button("");

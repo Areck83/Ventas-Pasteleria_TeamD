@@ -45,7 +45,7 @@ public class MenuExpandible extends ToolBar {
         ImageView iconoOpcionError = new ImageView(new Image(getClass().getResource("error-base.png").toExternalForm()));
         ImageView iconoOpcionSalir = new ImageView(new Image(getClass().getResource("exit.png").toExternalForm()));
 
-        String estiloBoton = "-fx-text-fill: black;  -fx-font-size: 12pt";
+        String estiloBoton = "-fx-text-fill: white;  -fx-font-size: 12pt";
 
         //Opciones del boton bloqueo
         Button opcionBloqueo = new Button("BLOQ SYS");
