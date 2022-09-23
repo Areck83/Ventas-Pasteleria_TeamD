@@ -32,11 +32,11 @@ public class Login extends BorderPane {
         this.gridForm = new GridPane();
         this.btnIniciar = new Button("Iniciar sesion");
 
-        ImageView imagen = new ImageView("cake.png");
+        ImageView imagen = new ImageView("LogoP.png");
         imagen.setFitWidth(450.0);
         imagen.setFitHeight(500.0);
         imagen.setX(0.0);
-        //this.btnIniciar.getStyleClass().add("cssBoton"); No usar estilos hasta el final
+        this.btnIniciar.getStyleClass().add("cssBoton"); //Despues debemos de modificar los estilos
 
         //Boton para iniciar sesion
         this.btnIniciar.setMaxWidth(171.0);
@@ -66,7 +66,7 @@ public class Login extends BorderPane {
 
         this.gridForm.setVgap(5.0);
         this.gridForm.setHgap(5.0);
-        //this.gridForm.getStyleClass().add("root");
+        this.gridForm.getStyleClass().add("root");
         this.gridForm.add(this.lblUsuario, 3, 5);
         this.gridForm.add(this.txtUsuario, 4, 5);
         this.gridForm.add(this.lblPass, 3, 20);

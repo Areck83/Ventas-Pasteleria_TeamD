@@ -12,8 +12,9 @@ public class Lanzador extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = new Login(stage);
-        Scene scene = new Scene(root, 1200, 800);
+        Scene scene = new Scene(root, 900, 500);
         stage.setTitle("Prueba segunda iter");
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
