@@ -1,11 +1,15 @@
 package com.teamde.ventaspasteleria_td.Usuario;
 
+import com.teamde.ventaspasteleria_td.ContenedorUsuarios;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +18,7 @@ public class PantallaUsuario extends BorderPane {
     private Label lTitulo;
     private Button bAgregarUsuario;
     private HBox barra;
-   private TableView<Usuario> tablaUsuarios;
+   private TableView tablaUsuarios;
     //private ObservableList<Pastel> pasteles;
 
     public PantallaUsuario() {
@@ -54,7 +58,7 @@ public class PantallaUsuario extends BorderPane {
         this.bAgregarUsuario = new Button("Agregar Usuario");
         this.bAgregarUsuario.getStyleClass().add("cssBoton");
         this.bAgregarUsuario.setOnAction((evtm) -> {
-           // this.crearPastel();
+           this.crearUsuario();
         });
         this.barra = new HBox();
         this.barra.setSpacing(200.0);
@@ -85,4 +89,16 @@ public class PantallaUsuario extends BorderPane {
         stage.setResizable(false);
         stage.show();
     }*/
+
+    private void crearUsuario(){
+        ContenedorUsuarios root = new ContenedorUsuarios();
+        Stage ventanaUsuario = new Stage();
+        Scene escena = new Scene(root, 400, 300);
+        escena.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+        ventanaUsuario.setResizable(false);
+        ventanaUsuario.setAlwaysOnTop(true);
+        ventanaUsuario.setScene(escena);
+        ventanaUsuario.setTitle("Agregar Usuario");
+        ventanaUsuario.show();
+    }
 }
