@@ -15,7 +15,7 @@ public class PantallaProveedor extends BorderPane {
     private Label lTitulo;
     private Button bAgregarProveedor;
     private HBox barra;
-   private TableView<Ingrediente> tablaProveedor;
+   private TableView<Proveedor> tablaProveedor;
     //private ObservableList<Pastel> pasteles;
 
     public PantallaProveedor() {
@@ -23,14 +23,14 @@ public class PantallaProveedor extends BorderPane {
     }
 
     private void inicializarComponentes() {
-        this.lTitulo = new Label("Ingredientes");
+        this.lTitulo = new Label("Proveedores");
         this.lTitulo.getStyleClass().add("label-titulo");
         this.lTitulo.setPrefHeight(70.0);
         //Pasteles listaHelper = new Pasteles();
         //listaHelper.crearLista();
-        List<Ingrediente> listaProveedorHelper = new ArrayList<>();
+        List<Proveedor> listaProveedorHelper = new ArrayList<>();
         TablaProveedor tablaProveedor1 = new TablaProveedor(listaProveedorHelper);
-        this.tablaProveedor = tablaProveedor1.getTablaProductos();
+        this.tablaProveedor = tablaProveedor1.getTablaProveedor();
 
         //TableView tablaPasteles1 = this.tablaPasteles.getTablaPasteles();
         //TableView tablaPasteles1 = new TableView();
@@ -44,7 +44,7 @@ public class PantallaProveedor extends BorderPane {
 
         });*/
 
-        this.bAgregarProveedor = new Button("Agregar Ingrediente");
+        this.bAgregarProveedor = new Button("Agregar Proveedor");
         this.bAgregarProveedor.getStyleClass().add("cssBoton");
         this.bAgregarProveedor.setOnAction((evtm) -> {
            // this.crearPastel();

@@ -13,7 +13,7 @@ import javafx.util.Callback;
 import java.util.List;
 
 public class TablaIngrediente {
-    private TableView<Ingrediente> tablaProductos;
+    private TableView<Ingrediente> tablaIngredientes;
         private ObservableList<Ingrediente> ingredientes = FXCollections.observableArrayList();
         //private Pastel pastel;
 
@@ -21,9 +21,9 @@ public class TablaIngrediente {
 
         public TablaIngrediente(List<Ingrediente> listaIngrediente) {
             this.ingredientes.addAll(listaIngrediente);
-            this.tablaProductos = new TableView<>();
-            this.tablaProductos.getStyleClass().add("table-cell");
-            this.tablaProductos.setPrefWidth(700.0);
+            this.tablaIngredientes = new TableView<>();
+            this.tablaIngredientes.getStyleClass().add("table-cell");
+            this.tablaIngredientes.setPrefWidth(700.0);
             this.crearTabla();
         }
         //crear la tabla con los atributos del usuario
@@ -107,8 +107,8 @@ public class TablaIngrediente {
 
             //colEliminar.setCellFactory(cellFactory1);
 
-            this.tablaProductos.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
-            this.tablaProductos.getColumns().add(colEliminar);
+            this.tablaIngredientes.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
+            this.tablaIngredientes.getColumns().add(colEliminar);
         }
         //Metodos de la tabla
         /*public void agregarPastel(Pastel pastel, int seleccion) {
@@ -128,7 +128,7 @@ public class TablaIngrediente {
         }*/
 
         public TableView<Ingrediente> getTablaProductos() {
-            return this.tablaProductos;
+            return this.tablaIngredientes;
         }
 /*
         public int total() {
