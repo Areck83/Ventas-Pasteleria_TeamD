@@ -1,4 +1,4 @@
-package com.teamde.ventaspasteleria_td.Productos;
+package com.teamde.ventaspasteleria_td.Ingredientes;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,26 +10,26 @@ import javafx.scene.layout.HBox;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PantallaProducto extends BorderPane {
+public class PantallaIngrediente extends BorderPane {
     private Label lTitulo;
     private Button bAgregarProducto;
     private HBox barra;
-   private TableView<Producto> tablaProducto;
+   private TableView<Ingrediente> tablaProducto;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaProducto() {
+    public PantallaIngrediente() {
         this.inicializarComponentes();
     }
 
     private void inicializarComponentes() {
-        this.lTitulo = new Label("Usuarios");
+        this.lTitulo = new Label("Ingredientes");
         this.lTitulo.getStyleClass().add("label-titulo");
         this.lTitulo.setPrefHeight(70.0);
         //Pasteles listaHelper = new Pasteles();
         //listaHelper.crearLista();
-        List<Producto> listaProductoHelper = new ArrayList<>();
-        TablaProducto tablaProducto1 = new TablaProducto(listaProductoHelper);
-        this.tablaProducto = tablaProducto1.getTablaProductos();
+        List<Ingrediente> listaIngredienteHelper = new ArrayList<>();
+        TablaIngrediente tablaIngrediente1 = new TablaIngrediente(listaIngredienteHelper);
+        this.tablaProducto = tablaIngrediente1.getTablaProductos();
 
         //TableView tablaPasteles1 = this.tablaPasteles.getTablaPasteles();
         //TableView tablaPasteles1 = new TableView();
@@ -43,7 +43,7 @@ public class PantallaProducto extends BorderPane {
 
         });*/
 
-        this.bAgregarProducto = new Button("Agregar Producto");
+        this.bAgregarProducto = new Button("Agregar Ingrediente");
         this.bAgregarProducto.getStyleClass().add("cssBoton");
         this.bAgregarProducto.setOnAction((evtm) -> {
            // this.crearPastel();

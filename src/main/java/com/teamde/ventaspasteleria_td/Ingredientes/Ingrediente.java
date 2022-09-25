@@ -1,19 +1,22 @@
 package com.teamde.ventaspasteleria_td.Ingredientes;
 
-import java.util.Date;
-
 public class Ingrediente {
-    private Integer codigo;
+    private String ID;
     private String nombre;
-    private String tipo;
-    private Float cantidad;
-    private Date caducidad;
+    private String precio;
+    private Double cantidad;
+    private String detalles;
+    private String IDproveedor;
 
-    public Ingrediente(Integer codigo, String nombre, String tipo, Float cantidad, Date caducidad){
-        this.codigo = codigo;
+    public Ingrediente() {
+    }
+
+    public Ingrediente(String ID, String nombre, String precio, Double cantidad, String detalles, String IDproveedor) {
+        this.ID = ID;
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.precio = precio;
         this.cantidad = cantidad;
-        this.caducidad = caducidad;
+        this.detalles = detalles;
+        this.IDproveedor = IDproveedor;
     }
 }

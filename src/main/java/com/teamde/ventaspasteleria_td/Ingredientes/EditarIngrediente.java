@@ -1,4 +1,4 @@
-package com.teamde.ventaspasteleria_td.Productos;
+package com.teamde.ventaspasteleria_td.Ingredientes;
 
 /*public class EditarUsuario extends GridPane {
     private Double precioPastel = 0.0;
