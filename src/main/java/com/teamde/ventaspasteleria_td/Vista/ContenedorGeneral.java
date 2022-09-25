@@ -1,4 +1,4 @@
-package com.teamde.ventaspasteleria_td;
+package com.teamde.ventaspasteleria_td.Vista;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

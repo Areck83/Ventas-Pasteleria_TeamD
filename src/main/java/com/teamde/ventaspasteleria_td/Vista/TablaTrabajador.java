@@ -1,5 +1,6 @@
-package com.teamde.ventaspasteleria_td.Ingredientes;
+package com.teamde.ventaspasteleria_td.Vista;
 
+import com.teamde.ventaspasteleria_td.Modelo.Trabajador;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -12,49 +13,49 @@ import javafx.util.Callback;
 
 import java.util.List;
 
-public class TablaIngrediente {
-    private TableView<Ingrediente> tablaIngredientes;
-        private ObservableList<Ingrediente> ingredientes = FXCollections.observableArrayList();
+public class TablaTrabajador {
+    private TableView<Trabajador> tablaUsuarios;
+        private ObservableList<Trabajador> trabajadors = FXCollections.observableArrayList();
         //private Pastel pastel;
 
-        // Agregar a los usuarios desde la base de datos con ayuda del helper
+        // Agregar a los trabajadors desde la base de datos con ayuda del helper
 
-        public TablaIngrediente(List<Ingrediente> listaIngrediente) {
-            this.ingredientes.addAll(listaIngrediente);
-            this.tablaIngredientes = new TableView<>();
-            this.tablaIngredientes.getStyleClass().add("table-cell");
-            this.tablaIngredientes.setPrefWidth(700.0);
+        public TablaTrabajador(List<Trabajador> listaTrabajador) {
+            this.trabajadors.addAll(listaTrabajador);
+            this.tablaUsuarios = new TableView<>();
+            this.tablaUsuarios.getStyleClass().add("table-cell");
+            this.tablaUsuarios.setPrefWidth(700.0);
             this.crearTabla();
         }
         //crear la tabla con los atributos del usuario
 
         public void crearTabla() {
             //this.tablaPasteles.setItems(this.pasteles);
-            //Cambiar de  <String, String > a <Usuario, String> segun sea el caso
+            //Cambiar de  <String, String > a <Trabajador, String> segun sea el caso
             //Corregir las tablas en caso de ser necesario
-            TableColumn<Ingrediente, String> colId = new TableColumn<Ingrediente, String>("ID");
-            TableColumn<Ingrediente, String> colNombre = new TableColumn<Ingrediente, String>("Nombre");
-            TableColumn<Ingrediente, String> colPrecio= new TableColumn<Ingrediente, String>("Contrasenia");
-            TableColumn<Ingrediente, String> colCantidad = new TableColumn<Ingrediente, String>("Correo");
-            TableColumn<Ingrediente, String> colIdProveedor = new TableColumn<Ingrediente, String>("Telefono");
-            TableColumn<Ingrediente, Void> colEliminar = new TableColumn<Ingrediente, Void>("Eliminar");
+            TableColumn<Trabajador, String> colId = new TableColumn<Trabajador, String>("ID");
+            TableColumn<Trabajador, String> colNombre = new TableColumn<Trabajador, String>("Nombre");
+            TableColumn<Trabajador, String> colContr = new TableColumn<Trabajador, String>("Contrasenia");
+            TableColumn<Trabajador, String> colCorreo = new TableColumn<Trabajador, String>("Correo");
+            TableColumn<Trabajador, String> colTelefono = new TableColumn<Trabajador, String>("Telefono");
+            TableColumn<Trabajador, Void> colEliminar = new TableColumn<Trabajador, Void>("Eliminar");
 
             colEliminar.setPrefWidth(130.0);
             colNombre.setPrefWidth(120.0);
-            colPrecio.setPrefWidth(120.0);
-            colCantidad.setPrefWidth(120.0);
-            colIdProveedor .setPrefWidth(120.0);
+            colContr.setPrefWidth(120.0);
+            colCorreo.setPrefWidth(120.0);
+            colTelefono .setPrefWidth(120.0);
 
-            colId.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("id"));
-            colNombre.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("nombre"));
-            colPrecio.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("password"));
-            colCantidad.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("correo"));
-            colIdProveedor.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("telefono"));
+            colId.setCellValueFactory(new PropertyValueFactory<Trabajador, String>("id"));
+            colNombre.setCellValueFactory(new PropertyValueFactory<Trabajador, String>("nombre"));
+            colContr.setCellValueFactory(new PropertyValueFactory<Trabajador, String>("password"));
+            colCorreo.setCellValueFactory(new PropertyValueFactory<Trabajador, String>("correo"));
+            colTelefono.setCellValueFactory(new PropertyValueFactory<Trabajador, String>("telefono"));
 
-            //Boton de aliminar
-            Callback<TableColumn<Ingrediente, Void>, TableCell<Ingrediente, Void>> cellFactory1 = new Callback<TableColumn<Ingrediente, Void>, TableCell<Ingrediente, Void>>() {
-                public TableCell<Ingrediente, Void> call(TableColumn<Ingrediente, Void> param) {
-                    TableCell<Ingrediente, Void> cell1 = new TableCell<Ingrediente, Void>() {
+            //crear y accionar el boton de aliminar
+            Callback<TableColumn<Trabajador, Void>, TableCell<Trabajador, Void>> cellFactory1 = new Callback<TableColumn<Trabajador, Void>, TableCell<Trabajador, Void>>() {
+                public TableCell<Trabajador, Void> call(TableColumn<Trabajador, Void> param) {
+                    TableCell<Trabajador, Void> cell1 = new TableCell<Trabajador, Void>() {
                         final Button boton = new Button("Eliminar");
 
                         {
@@ -78,6 +79,7 @@ public class TablaIngrediente {
                     return cell1;
                 }
             };
+            //Crea una imagen y la aniade a la tabla (puede ser util despues)
             /*Callback<TableColumn<Pastel, Void>, TableCell<Pastel, Void>> cellFactory2 = new Callback<TableColumn<Pastel, Void>, TableCell<Pastel, Void>>() {
                 public TableCell<Pastel, Void> call(TableColumn<Pastel, Void> param) {
                     TableCell<Pastel, Void> cell2 = new TableCell<Pastel, Void>() {
@@ -106,9 +108,9 @@ public class TablaIngrediente {
             };*/
 
             //colEliminar.setCellFactory(cellFactory1);
-
-            this.tablaIngredientes.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
-            this.tablaIngredientes.getColumns().add(colEliminar);
+            //Agrega las columnas a la tabla
+            this.tablaUsuarios.getColumns().addAll(colId, colNombre, colContr, colCorreo, colTelefono);
+            this.tablaUsuarios.getColumns().add(colEliminar);
         }
         //Metodos de la tabla
         /*public void agregarPastel(Pastel pastel, int seleccion) {
@@ -126,9 +128,9 @@ public class TablaIngrediente {
             }
 
         }*/
-
-        public TableView<Ingrediente> getTablaProductos() {
-            return this.tablaIngredientes;
+        //Retorna la tabla hacia la pantalla
+        public TableView<Trabajador> getTablaUsuario() {
+            return this.tablaUsuarios;
         }
 /*
         public int total() {

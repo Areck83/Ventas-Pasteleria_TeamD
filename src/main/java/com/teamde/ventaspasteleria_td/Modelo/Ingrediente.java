@@ -1,4 +1,4 @@
-package com.teamde.ventaspasteleria_td.Ingredientes;
+package com.teamde.ventaspasteleria_td.Modelo;
 
 public class Ingrediente {
     private String ID;

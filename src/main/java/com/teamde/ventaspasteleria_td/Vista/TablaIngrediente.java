@@ -1,6 +1,6 @@
-package com.teamde.ventaspasteleria_td.Proveedores;
+package com.teamde.ventaspasteleria_td.Vista;
 
-import com.teamde.ventaspasteleria_td.Ingredientes.Ingrediente;
+import com.teamde.ventaspasteleria_td.Modelo.Ingrediente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -13,32 +13,32 @@ import javafx.util.Callback;
 
 import java.util.List;
 
-public class TablaProveedor {
-    private TableView<Proveedor> tablaProveedor;
-        private ObservableList<Proveedor> ingredientes = FXCollections.observableArrayList();
+public class TablaIngrediente {
+    private TableView<Ingrediente> tablaIngredientes;
+        private ObservableList<Ingrediente> ingredientes = FXCollections.observableArrayList();
         //private Pastel pastel;
 
         // Agregar a los usuarios desde la base de datos con ayuda del helper
 
-        public TablaProveedor(List<Proveedor> listaIngrediente) {
+        public TablaIngrediente(List<Ingrediente> listaIngrediente) {
             this.ingredientes.addAll(listaIngrediente);
-            this.tablaProveedor = new TableView<>();
-            this.tablaProveedor.getStyleClass().add("table-cell");
-            this.tablaProveedor.setPrefWidth(700.0);
+            this.tablaIngredientes = new TableView<>();
+            this.tablaIngredientes.getStyleClass().add("table-cell");
+            this.tablaIngredientes.setPrefWidth(700.0);
             this.crearTabla();
         }
         //crear la tabla con los atributos del usuario
 
         public void crearTabla() {
             //this.tablaPasteles.setItems(this.pasteles);
-            //Cambiar de  <String, String > a <Usuario, String> segun sea el caso
+            //Cambiar de  <String, String > a <Trabajador, String> segun sea el caso
             //Corregir las tablas en caso de ser necesario
-            TableColumn<Proveedor, String> colId = new TableColumn<Proveedor, String>("ID");
-            TableColumn<Proveedor, String> colNombre = new TableColumn<Proveedor, String>("Nombre");
-            TableColumn<Proveedor, String> colPrecio= new TableColumn<Proveedor, String>("Contrasenia");
-            TableColumn<Proveedor, String> colCantidad = new TableColumn<Proveedor, String>("Correo");
-            TableColumn<Proveedor, String> colIdProveedor = new TableColumn<Proveedor, String>("Telefono");
-            TableColumn<Proveedor, Void> colEliminar = new TableColumn<Proveedor, Void>("Eliminar");
+            TableColumn<Ingrediente, String> colId = new TableColumn<Ingrediente, String>("ID");
+            TableColumn<Ingrediente, String> colNombre = new TableColumn<Ingrediente, String>("Nombre");
+            TableColumn<Ingrediente, String> colPrecio= new TableColumn<Ingrediente, String>("Contrasenia");
+            TableColumn<Ingrediente, String> colCantidad = new TableColumn<Ingrediente, String>("Correo");
+            TableColumn<Ingrediente, String> colIdProveedor = new TableColumn<Ingrediente, String>("Telefono");
+            TableColumn<Ingrediente, Void> colEliminar = new TableColumn<Ingrediente, Void>("Eliminar");
 
             colEliminar.setPrefWidth(130.0);
             colNombre.setPrefWidth(120.0);
@@ -46,16 +46,16 @@ public class TablaProveedor {
             colCantidad.setPrefWidth(120.0);
             colIdProveedor .setPrefWidth(120.0);
 
-            colId.setCellValueFactory(new PropertyValueFactory<Proveedor, String>("id"));
-            colNombre.setCellValueFactory(new PropertyValueFactory<Proveedor, String>("nombre"));
-            colPrecio.setCellValueFactory(new PropertyValueFactory<Proveedor, String>("password"));
-            colCantidad.setCellValueFactory(new PropertyValueFactory<Proveedor, String>("correo"));
-            colIdProveedor.setCellValueFactory(new PropertyValueFactory<Proveedor, String>("telefono"));
+            colId.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("id"));
+            colNombre.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("nombre"));
+            colPrecio.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("password"));
+            colCantidad.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("correo"));
+            colIdProveedor.setCellValueFactory(new PropertyValueFactory<Ingrediente, String>("telefono"));
 
             //Boton de aliminar
-            Callback<TableColumn<Proveedor, Void>, TableCell<Proveedor, Void>> cellFactory1 = new Callback<TableColumn<Proveedor, Void>, TableCell<Proveedor, Void>>() {
-                public TableCell<Proveedor, Void> call(TableColumn<Proveedor, Void> param) {
-                    TableCell<Proveedor, Void> cell1 = new TableCell<Proveedor, Void>() {
+            Callback<TableColumn<Ingrediente, Void>, TableCell<Ingrediente, Void>> cellFactory1 = new Callback<TableColumn<Ingrediente, Void>, TableCell<Ingrediente, Void>>() {
+                public TableCell<Ingrediente, Void> call(TableColumn<Ingrediente, Void> param) {
+                    TableCell<Ingrediente, Void> cell1 = new TableCell<Ingrediente, Void>() {
                         final Button boton = new Button("Eliminar");
 
                         {
@@ -108,8 +108,8 @@ public class TablaProveedor {
 
             //colEliminar.setCellFactory(cellFactory1);
 
-            this.tablaProveedor.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
-            this.tablaProveedor.getColumns().add(colEliminar);
+            this.tablaIngredientes.getColumns().addAll(colId, colNombre, colPrecio, colCantidad, colIdProveedor);
+            this.tablaIngredientes.getColumns().add(colEliminar);
         }
         //Metodos de la tabla
         /*public void agregarPastel(Pastel pastel, int seleccion) {
@@ -128,8 +128,8 @@ public class TablaProveedor {
 
         }*/
 
-        public TableView<Proveedor> getTablaProveedor() {
-            return this.tablaProveedor;
+        public TableView<Ingrediente> getTablaProductos() {
+            return this.tablaIngredientes;
         }
 /*
         public int total() {

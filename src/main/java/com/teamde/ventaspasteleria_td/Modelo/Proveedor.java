@@ -1,4 +1,4 @@
-package com.teamde.ventaspasteleria_td.Proveedores;
+package com.teamde.ventaspasteleria_td.Modelo;
 
 import javafx.scene.control.Button;
 

@@ -1,5 +1,6 @@
-package com.teamde.ventaspasteleria_td.Ingredientes;
+package com.teamde.ventaspasteleria_td.Vista;
 
+import com.teamde.ventaspasteleria_td.Modelo.Ingrediente;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -55,7 +56,7 @@ public class PantallaIngrediente extends BorderPane {
         this.setTop(barra);
         this.setLeft(tablaIngrediente);
     }
-    //private void editarPastel(Usuario usuario, int seleccion) {
+    //private void editarPastel(Trabajador usuario, int seleccion) {
     /*private void editarUsuario() {
         Stage stage = new Stage();
         EditarUsuario = new EditarUsuario(stage, pastel, this.tablaUsuarios);

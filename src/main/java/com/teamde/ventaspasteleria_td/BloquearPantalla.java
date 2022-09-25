@@ -3,10 +3,10 @@ package com.teamde.ventaspasteleria_td;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Proceso{
+public class BloquearPantalla {
     Timer tiempo;
 
-public Proceso() {
+public BloquearPantalla() {
     TimerTask task = new TimerTask() {
         public void run() {
             //The task you want to do

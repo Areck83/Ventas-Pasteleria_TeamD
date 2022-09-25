@@ -1,5 +1,7 @@
-package com.teamde.ventaspasteleria_td;
+package com.teamde.ventaspasteleria_td.Vista;
 
+import com.teamde.ventaspasteleria_td.Vista.ContenedorEstadisticas;
+import com.teamde.ventaspasteleria_td.Vista.ContenedorProveedores;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -12,8 +14,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-
-import java.io.FileInputStream;
 
 public class LanzadorSecciones extends BorderPane {
     Background fondoDashboard = new Background(new BackgroundFill(Color.valueOf("E6D5CE"), new CornerRadii(0), new Insets(0)));

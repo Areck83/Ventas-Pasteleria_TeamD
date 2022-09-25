@@ -12,4 +12,6 @@ module com.teamde.ventaspasteleria_td {
 
     opens com.teamde.ventaspasteleria_td to javafx.fxml;
     exports com.teamde.ventaspasteleria_td;
+    exports com.teamde.ventaspasteleria_td.Vista;
+    opens com.teamde.ventaspasteleria_td.Vista to javafx.fxml;
 }

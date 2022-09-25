@@ -1,5 +1,6 @@
-package com.teamde.ventaspasteleria_td;
+package com.teamde.ventaspasteleria_td.Vista;
 
+import com.teamde.ventaspasteleria_td.Vista.ContenedorGeneral;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -54,7 +55,7 @@ public class Login extends BorderPane {
         this.txtPass.setPromptText("Ingresa la contraseña");
 
         //Titulo de los campos en el programa
-        this.lblUsuario = new Label("Usuario: ");
+        this.lblUsuario = new Label("Trabajador: ");
         this.lblUsuario.getStyleClass().add("label");
 
         this.lblPass = new Label("Contraseña: ");

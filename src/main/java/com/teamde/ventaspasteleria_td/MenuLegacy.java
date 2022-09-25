@@ -7,9 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
-public class Menu extends BorderPane {
+public class MenuLegacy extends BorderPane {
     Label titulo = new Label("Bienvenido");
     Label lb1;
     Label lb2;
@@ -21,7 +20,7 @@ public class Menu extends BorderPane {
     Integer tiempo;
     Button butVenta;
 
-    public Menu() throws InterruptedException {
+    public MenuLegacy() throws InterruptedException {
 
         isPressed();
         this.titulo.getStyleClass().add("label-titulo-Grande");
@@ -182,7 +181,7 @@ public class Menu extends BorderPane {
         stage.show();
     }*/
    /* private void espera() throws InterruptedException {
-        Proceso hilo = new Proceso();
+        BloquearPantalla hilo = new BloquearPantalla();
         butVenta.setOnMouseClicked(evtm->{
                 try {
                     //hilo.esperar();
