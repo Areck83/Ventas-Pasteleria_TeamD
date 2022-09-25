@@ -12,9 +12,9 @@ import java.util.List;
 
 public class PantallaIngrediente extends BorderPane {
     private Label lTitulo;
-    private Button bAgregarProducto;
+    private Button bAgregarIngrediente;
     private HBox barra;
-   private TableView<Ingrediente> tablaProducto;
+   private TableView<Ingrediente> tablaIngrediente;
     //private ObservableList<Pastel> pasteles;
 
     public PantallaIngrediente() {
@@ -29,7 +29,7 @@ public class PantallaIngrediente extends BorderPane {
         //listaHelper.crearLista();
         List<Ingrediente> listaIngredienteHelper = new ArrayList<>();
         TablaIngrediente tablaIngrediente1 = new TablaIngrediente(listaIngredienteHelper);
-        this.tablaProducto = tablaIngrediente1.getTablaProductos();
+        this.tablaIngrediente = tablaIngrediente1.getTablaProductos();
 
         //TableView tablaPasteles1 = this.tablaPasteles.getTablaPasteles();
         //TableView tablaPasteles1 = new TableView();
@@ -43,17 +43,17 @@ public class PantallaIngrediente extends BorderPane {
 
         });*/
 
-        this.bAgregarProducto = new Button("Agregar Ingrediente");
-        this.bAgregarProducto.getStyleClass().add("cssBoton");
-        this.bAgregarProducto.setOnAction((evtm) -> {
+        this.bAgregarIngrediente = new Button("Agregar Ingrediente");
+        this.bAgregarIngrediente.getStyleClass().add("cssBoton");
+        this.bAgregarIngrediente.setOnAction((evtm) -> {
            // this.crearPastel();
         });
         this.barra = new HBox();
         this.barra.setSpacing(200.0);
         this.barra.setAlignment(Pos.CENTER);
-        this.barra.getChildren().addAll(lTitulo, bAgregarProducto);
+        this.barra.getChildren().addAll(lTitulo, bAgregarIngrediente);
         this.setTop(barra);
-        this.setLeft(tablaProducto);
+        this.setLeft(tablaIngrediente);
     }
     //private void editarPastel(Usuario usuario, int seleccion) {
     /*private void editarUsuario() {

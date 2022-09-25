@@ -1,6 +1,7 @@
 package com.teamde.ventaspasteleria_td;
 
 import com.teamde.ventaspasteleria_td.Ingredientes.PantallaIngrediente;
+import com.teamde.ventaspasteleria_td.Proveedores.PantallaProveedor;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -13,7 +14,7 @@ public class Main extends Application {
     }
 
     public void start(Stage stage) throws IOException {
-        Pane menu = new PantallaIngrediente();
+        Pane menu = new PantallaProveedor();
         Scene scene = new Scene(menu, 900.0, 500.0);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Login");
