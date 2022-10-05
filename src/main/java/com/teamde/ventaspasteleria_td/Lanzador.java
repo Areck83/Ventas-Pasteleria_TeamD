@@ -15,7 +15,7 @@ public class Lanzador extends Application {
         Parent root = new Login(stage);
         Scene scene = new Scene(root, 900, 500);
         stage.setTitle("Prueba segunda iter");
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("com/teamde/ventaspasteleria_td/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

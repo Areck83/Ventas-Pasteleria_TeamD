@@ -1,6 +1,5 @@
 package com.teamde.ventaspasteleria_td.Vista;
 
-import com.teamde.ventaspasteleria_td.Vista.ContenedorGeneral;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -119,6 +118,8 @@ public class Login extends BorderPane {
             stage1.show();
             this.stage.close();
             System.out.println("Exito");
+        }else{
+            VentanaAlert ventana = new VentanaAlert("*Error: Usuario no encontrado","Error Login");
         }
 
     }

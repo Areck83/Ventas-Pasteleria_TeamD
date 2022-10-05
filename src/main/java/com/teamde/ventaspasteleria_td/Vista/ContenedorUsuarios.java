@@ -2,11 +2,8 @@ package com.teamde.ventaspasteleria_td.Vista;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
 public class ContenedorUsuarios extends GridPane {
@@ -24,6 +21,7 @@ public class ContenedorUsuarios extends GridPane {
     public ContenedorUsuarios(){
         inicializarComponentes();
     }
+
     private void inicializarComponentes(){
         this.setVgap(30);
         this.setHgap(10);
@@ -40,15 +38,16 @@ public class ContenedorUsuarios extends GridPane {
         etiTel = new Label("Telefono: ");
         txtTel = new TextField();
 
-        imgEliminar = new ImageView(new Image(getClass().getResource("contenedor-de-basura.png").toExternalForm()));
+        imgEliminar = new ImageView("contenedor-de-basura.png");
         imgEliminar.setFitWidth(50);
         imgEliminar.setFitHeight(50);
 
         btnElim = new Button();
         btnElim.setGraphic(imgEliminar);
         btnElim.setTooltip(new Tooltip("Eliminar usuario"));
+        btnElim.getStyleClass().add("cssBoton");
 
-        imgConfirmar = new ImageView(new Image(getClass().getResource("correcto.png").toExternalForm()));
+        imgConfirmar = new ImageView("correcto.png");
         imgConfirmar.setFitHeight(40);
         imgConfirmar.setFitWidth(40);
 

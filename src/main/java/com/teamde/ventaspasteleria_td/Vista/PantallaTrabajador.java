@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -90,13 +91,13 @@ public class PantallaTrabajador extends BorderPane {
     }*/
 
     private void crearUsuario(){
-        ContenedorUsuarios root = new ContenedorUsuarios();
         Stage ventanaUsuario = new Stage();
+        Pane root = new ContenedorUsuarios();
         Scene escena = new Scene(root, 400, 300);
-        escena.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+        escena.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        ventanaUsuario.setScene(escena);
         ventanaUsuario.setResizable(false);
         ventanaUsuario.setAlwaysOnTop(true);
-        ventanaUsuario.setScene(escena);
         ventanaUsuario.setTitle("Agregar Trabajador");
         ventanaUsuario.show();
     }
