@@ -15,7 +15,7 @@ public class MainPruebas extends Application {
     public void start(Stage stage) throws IOException {
         Pane menu = new Login(stage);
         Scene scene = new Scene(menu, 900.0, 500.0);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Login");
         stage.setScene(scene);
         //stage.setResizable(false);

@@ -26,6 +26,7 @@ public class Login extends BorderPane {
     Stage stage;
 
     public Login(Stage stage) throws IOException {
+        getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         //Inicialización de componentes
         this.stage = stage;
         this.borderOrganizacion = new BorderPane();

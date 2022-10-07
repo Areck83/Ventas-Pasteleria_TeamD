@@ -2,11 +2,14 @@ package com.teamde.ventaspasteleria_td.Vista;
 
 import com.teamde.ventaspasteleria_td.Modelo.Proveedor;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +19,14 @@ public class PantallaProveedor extends BorderPane {
     private Button bAgregarProveedor;
     private HBox barra;
    private TableView<Proveedor> tablaProveedor;
+    TabPane tabPane;
+    Tab tab;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaProveedor() {
+    public PantallaProveedor(TabPane tabPane, Tab tab) {
+        getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        this.tabPane = tabPane;
+        this.tab = tab;
         this.inicializarComponentes();
     }
 
@@ -47,7 +55,7 @@ public class PantallaProveedor extends BorderPane {
         this.bAgregarProveedor = new Button("Agregar Proveedor");
         this.bAgregarProveedor.getStyleClass().add("cssBoton");
         this.bAgregarProveedor.setOnAction((evtm) -> {
-           // this.crearPastel();
+           crearProveedor();
         });
         this.barra = new HBox();
         this.barra.setSpacing(200.0);
@@ -55,6 +63,18 @@ public class PantallaProveedor extends BorderPane {
         this.barra.getChildren().addAll(lTitulo, bAgregarProveedor);
         this.setTop(barra);
         this.setLeft(tablaProveedor);
+    }
+
+    private void crearProveedor() {
+        Stage stage = new Stage();
+        Pane menu = new ContenedorProveedores();
+        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        Scene scene = new Scene(menu, 900.0, 500.0);
+        //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Nuevo Proveedor");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
     //private void editarPastel(Trabajador usuario, int seleccion) {
     /*private void editarUsuario() {

@@ -124,7 +124,7 @@ public class LanzadorSecciones extends BorderPane {
         btnProveedores.setMaxWidth(200);
         btnProveedores.setMaxWidth(200);
         btnProveedores.setOnAction(e ->{
-            ContenedorProveedores panelProv = new ContenedorProveedores(tabPane, tab);
+            PantallaProveedor panelProv = new PantallaProveedor(tabPane, tab);
             tab.setContent(panelProv);
             tab.setText("Proveedores");
         });
@@ -134,7 +134,9 @@ public class LanzadorSecciones extends BorderPane {
         btnUsuarios.setMaxWidth(200);
         btnUsuarios.setMinWidth(200);
         btnUsuarios.setOnAction(e ->{
-            crearPantallaUsuarios();
+            PantallaTrabajador panelProv = new PantallaTrabajador(tabPane, tab, stage);
+            tab.setContent(panelProv);
+            tab.setText("Usuarios");
         });
 
         btnIngredientes = new Button("");
@@ -192,16 +194,5 @@ public class LanzadorSecciones extends BorderPane {
         setCenter(contenedorIconos);
     }
 
-    private void crearPantallaUsuarios() {
-        ContenedorUsuarios adminUsu = new ContenedorUsuarios();
-        Stage stage2 = new Stage();
-        Pane menu = new PantallaTrabajador();
-        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        Scene scene = new Scene(menu, 900.0, 500.0);
-        //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
-        stage2.setTitle("Login");
-        stage2.setScene(scene);
-        stage2.setResizable(false);
-        stage2.show();
-    }
+
 }

@@ -9,8 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 
 public class ContenedorProveedores extends GridPane{
-    TabPane tabPane;
-    Tab tab;
+
     Button btnVolver;
 
     Label etiCod;
@@ -25,9 +24,8 @@ public class ContenedorProveedores extends GridPane{
     ImageView imgEliminar;
     ImageView imgConfirmar;
 
-    public ContenedorProveedores(TabPane tabPane, Tab tab){
-        this.tabPane = tabPane;
-        this.tab = tab;
+    public ContenedorProveedores(){
+
 
         inicializarComponentes();
 
@@ -48,7 +46,7 @@ public class ContenedorProveedores extends GridPane{
         etiTel = new Label("Telefono: ");
         txtTel = new TextField();
 
-        imgEliminar = new ImageView(new Image(getClass().getResource("contenedor-de-basura.png").toExternalForm()));
+        imgEliminar = new ImageView("contenedor-de-basura.png");
         imgEliminar.setFitWidth(50);
         imgEliminar.setFitHeight(50);
 
@@ -56,7 +54,7 @@ public class ContenedorProveedores extends GridPane{
         btnElim.setGraphic(imgEliminar);
         btnElim.setTooltip(new Tooltip("Eliminar proveedor"));
 
-        imgConfirmar = new ImageView(new Image(getClass().getResource("correcto.png").toExternalForm()));
+        imgConfirmar = new ImageView("correcto.png");
         imgConfirmar.setFitHeight(40);
         imgConfirmar.setFitWidth(40);
 

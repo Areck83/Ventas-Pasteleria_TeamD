@@ -18,7 +18,9 @@ public class ContenedorUsuarios extends GridPane {
     Button btnAdd;
     ImageView imgEliminar;
     ImageView imgConfirmar;
+
     public ContenedorUsuarios(){
+        getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         inicializarComponentes();
     }
 

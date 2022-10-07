@@ -4,19 +4,18 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToolBar;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -24,7 +23,6 @@ import java.net.URL;
 public class MenuExpandible extends ToolBar {
     //Para acciones del boton principal
     private boolean compactado = false;
-
     //Constructor
     public MenuExpandible(){
         Background fondoNormal = new Background(new BackgroundFill(Color.valueOf("36241C"), new CornerRadii(0), new Insets(0)));
@@ -106,6 +104,15 @@ public class MenuExpandible extends ToolBar {
         });
         opcionSalir.setOnMouseExited(evt-> {
             opcionInformacion.setBackground(fondoNormal);
+        });
+
+        opcionSalir.setOnAction(evtm->{
+            Alert alertaSalir = new Alert(Alert.AlertType.CONFIRMATION);
+            alertaSalir.setTitle("Advertencia");
+            alertaSalir.setContentText("¿Esta seguro que quiere salir?");
+            ButtonType respuesta = alertaSalir.showAndWait().orElse(ButtonType.OK);
+            if (ButtonType.OK.equals(respuesta))
+                Platform.exit();
         });
 
         //Boton de el menu hamburguesa

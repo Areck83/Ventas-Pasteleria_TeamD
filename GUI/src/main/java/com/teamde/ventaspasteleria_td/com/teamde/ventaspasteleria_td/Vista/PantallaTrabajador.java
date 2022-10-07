@@ -3,9 +3,7 @@ package com.teamde.ventaspasteleria_td.Vista;
 import com.teamde.ventaspasteleria_td.Modelo.Trabajador;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -19,9 +17,16 @@ public class PantallaTrabajador extends BorderPane {
     private Button bAgregarUsuario;
     private HBox barra;
    private TableView tablaUsuarios;
+    TabPane tabPane;
+    Tab tab;
+    Stage stage;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaTrabajador() {
+    public PantallaTrabajador(TabPane tabPane, Tab tab, Stage stage) {
+        getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        this.stage=stage;
+        this.tabPane = tabPane;
+        this.tab = tab;
         this.inicializarComponentes();
     }
 
@@ -94,11 +99,12 @@ public class PantallaTrabajador extends BorderPane {
         Stage ventanaUsuario = new Stage();
         Pane root = new ContenedorUsuarios();
         Scene escena = new Scene(root, 400, 300);
-        escena.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        //escena.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         ventanaUsuario.setScene(escena);
         ventanaUsuario.setResizable(false);
         ventanaUsuario.setAlwaysOnTop(true);
         ventanaUsuario.setTitle("Agregar Trabajador");
+        ventanaUsuario.setAlwaysOnTop(true);
         ventanaUsuario.show();
     }
 }

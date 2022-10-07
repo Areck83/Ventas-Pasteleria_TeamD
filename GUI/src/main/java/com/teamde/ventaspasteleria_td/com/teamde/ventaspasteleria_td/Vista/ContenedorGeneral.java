@@ -10,12 +10,13 @@ import javafx.stage.Stage;
 
 //Panel inicial tras desbloqueo
 public class ContenedorGeneral extends BorderPane {
-    MenuExpandible menuExpandible = new MenuExpandible();
+    MenuExpandible menuExpandible;
     TabPane tabPane = new TabPane();
     Stage stage;
 
     public ContenedorGeneral(Stage stage1){
         this.stage=stage1;
+         menuExpandible = new MenuExpandible();
         Tab tab = new Tab("Apps");
         StackPane layout = new StackPane();
         LanzadorSecciones aplicaciones = new LanzadorSecciones(tabPane, tab,stage);
