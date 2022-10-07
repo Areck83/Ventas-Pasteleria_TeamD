@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="pasteleria">
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdpasteleriav4?serverTimezone=UTC&amp;useSSL=NO"/>
+            <property name="javafx.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javafx.persistence.jdbc.user" value="UserPasteleria"/>
+            <property name="javafx.persistence.jdbc.password" value="Pl0p-Pass.test?"/>
+        </properties>
+    </persistence-unit>
+</persistence>
