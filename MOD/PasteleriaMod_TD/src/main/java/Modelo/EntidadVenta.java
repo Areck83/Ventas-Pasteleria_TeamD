@@ -6,7 +6,7 @@ import java.sql.Time;
 import java.util.List;
 
 @Entity
-@Table(name = "venta", schema = "bdpasteleriav4", catalog = "")
+@Table(name = "venta", schema = "bdpasteleriav4")
 public class EntidadVenta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
