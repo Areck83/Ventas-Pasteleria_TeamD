@@ -103,24 +103,30 @@ public class Login extends BorderPane {
     }
 
     public void comprobar() throws InterruptedException {
-        //Esta configuración es temporal mientras que se hace conexión a la BD.
-        String user = this.txtUsuario.getText();
-        String pass = this.txtPass.getText();
-        if (user.equals("admin") && pass.equals("txtPass")) {
-            Stage stage1 = new Stage();
-            Pane menu = new ContenedorGeneral();
-            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-            Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
-            //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
-            stage1.setTitle("Login");
-            stage1.setScene(scene);
-            stage1.setResizable(false);
-            stage1.show();
-            this.stage.close();
-            System.out.println("Exito");
-        }else{
-            VentanaAlert ventana = new VentanaAlert("*Error: Usuario no encontrado","Error Login");
+            //Esta configuración es temporal mientras que se hace conexión a la BD.
+            String user = this.txtUsuario.getText();
+            String pass = this.txtPass.getText();
+            String errores = "";
+            if(!user.equals("admin")){
+                errores+="*Usuario no existe\n";
+            }
+            if(!pass.equals("txtPass")){
+                errores+="*Contrasenia erronea";
+            }
+            if(errores.equals("")){
+                Stage stage1 = new Stage();
+                Pane menu = new ContenedorGeneral();
+                Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+                Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
+                //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+                stage1.setTitle("Login");
+                stage1.setScene(scene);
+                stage1.setResizable(false);
+                stage1.show();
+                this.stage.close();
+                System.out.println("Exito");
+            }else {
+                VentanaAlert ventana = new VentanaAlert(errores,"Error Login");
+            }
         }
-
     }
-}
