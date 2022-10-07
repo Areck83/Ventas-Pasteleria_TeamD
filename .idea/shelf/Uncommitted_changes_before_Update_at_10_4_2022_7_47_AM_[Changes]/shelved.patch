@@ -1,0 +1,12 @@
+Index: src/main/java/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.java
+===================================================================
+diff --git a/src/main/java/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.java b/src/main/java/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.java
+--- a/src/main/java/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.java	
++++ b/src/main/java/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.java	
+@@ -1,6 +1,5 @@
+ package com.teamde.ventaspasteleria_td.Proveedores;
+ 
+-import com.teamde.ventaspasteleria_td.Ingredientes.Ingrediente;
+ import javafx.geometry.Pos;
+ import javafx.scene.control.Button;
+ import javafx.scene.control.Label;

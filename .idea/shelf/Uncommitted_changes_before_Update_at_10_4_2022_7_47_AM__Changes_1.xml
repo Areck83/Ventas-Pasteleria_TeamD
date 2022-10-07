@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_4_2022_7_47_AM_[Changes]1" date="1664887657683" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_7_47_AM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/4/2022 7:47 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/VentasPasteleria_TD_jar/VentasPasteleria_TD.jar" />
+    <option name="AFTER_PATH" value="out/artifacts/VentasPasteleria_TD_jar/VentasPasteleria_TD.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_7_47_AM_[Changes]1/VentasPasteleria_TD.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.class" />
+    <option name="AFTER_PATH" value="target/classes/com/teamde/ventaspasteleria_td/Proveedores/PantallaProveedor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_7_47_AM_[Changes]1/PantallaProveedor.class" />
+  </binary>
+</changelist>
