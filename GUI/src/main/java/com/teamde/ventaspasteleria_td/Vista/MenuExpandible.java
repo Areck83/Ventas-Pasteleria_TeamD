@@ -29,21 +29,21 @@ public class MenuExpandible extends ToolBar {
     public MenuExpandible(){
         Background fondoNormal = new Background(new BackgroundFill(Color.valueOf("36241C"), new CornerRadii(0), new Insets(0)));
         Background fondoExpandido = new Background(new BackgroundFill(Color.valueOf("422C22"), new CornerRadii(0), new Insets(0)));
-        URL rimagenExpandir = getClass().getResource("menu.png");
-        URL rimagenExpandido = getClass().getResource("menu-close.png");
+        //URL rimagenExpandir = getClass().getResource("menu.png");
+        //URL rimagenExpandido = getClass().getResource("menu-close.png");
 
-        ImageView iconoExpandir = new ImageView(new Image(rimagenExpandir.toExternalForm()));
-        ImageView iconoExpandido = new ImageView(new Image(rimagenExpandido.toExternalForm()));
+        ImageView iconoExpandir = new ImageView("menu.png");
+        ImageView iconoExpandido = new ImageView("menu-close.png");
         //ImageView iconoExpandir = new ImageView(new Image(getClass().getResource("lines.png").toExternalForm()));
         iconoExpandir.setFitWidth(32);
         iconoExpandir.setFitHeight(32);
         iconoExpandido.setFitWidth(32);
         iconoExpandido.setFitHeight(32);
 
-        ImageView iconoOpcionBloqueo = new ImageView(new Image(getClass().getResource("lock.png").toExternalForm()));
-        ImageView iconoOpcionInfo = new ImageView(new Image(getClass().getResource("information.png").toExternalForm()));
-        ImageView iconoOpcionError = new ImageView(new Image(getClass().getResource("error-base.png").toExternalForm()));
-        ImageView iconoOpcionSalir = new ImageView(new Image(getClass().getResource("exit.png").toExternalForm()));
+        ImageView iconoOpcionBloqueo = new ImageView("lock.png");
+        ImageView iconoOpcionInfo = new ImageView("information.png");
+        ImageView iconoOpcionError = new ImageView("error-base.png");
+        ImageView iconoOpcionSalir = new ImageView("exit.png");
 
         String estiloBoton = "-fx-text-fill: white;  -fx-font-size: 12pt";
 
