@@ -1,7 +1,6 @@
 package com.teamde.ventaspasteleria_td;
 
 import com.teamde.ventaspasteleria_td.Vista.Login;
-import com.teamde.ventaspasteleria_td.Vista.PantallaTrabajador;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;

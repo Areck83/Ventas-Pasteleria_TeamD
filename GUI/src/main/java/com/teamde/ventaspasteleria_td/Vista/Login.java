@@ -60,7 +60,7 @@ public class Login extends BorderPane {
         this.lblPass = new Label("Contraseña: ");
         this.lblPass.getStyleClass().add("label");
 
-        ImageView iuser = new ImageView("usuario_login.png");
+        ImageView iuser = new ImageView("User.png");
         iuser.setFitWidth(150.0);
         iuser.setFitHeight(150.0);
 
