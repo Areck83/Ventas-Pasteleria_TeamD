@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="VentasPasteleria_TD">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/GUI/out/artifacts/VentasPasteleria_TD_jar/VentasPasteleria_TD.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
