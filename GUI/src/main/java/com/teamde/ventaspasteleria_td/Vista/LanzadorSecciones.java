@@ -75,23 +75,23 @@ public class LanzadorSecciones extends BorderPane {
         tipoLetraDescripcion = Font.font("Arial", 12);
 
         //Imagenes
-        imvProveedores = new ImageView(new Image(getClass().getResource("proveedor.png").toExternalForm()));
+        imvProveedores = new ImageView("proveedor.png");
         imvProveedores.setFitWidth(200);
         imvProveedores.setFitHeight(200);
 
-        imvUsuarios = new ImageView(new Image(getClass().getResource("users.png").toExternalForm()));
+        imvUsuarios = new ImageView("users.png");
         imvUsuarios.setFitWidth(200);
         imvUsuarios.setFitHeight(200);
 
-        imvIngredientes = new ImageView(new Image(getClass().getResource("ingredientes.png").toExternalForm()));
+        imvIngredientes = new ImageView("ingredientes.png");
         imvIngredientes.setFitWidth(200);
         imvIngredientes.setFitHeight(200);
 
-        imvEstadisticas = new ImageView(new Image(getClass().getResource("estadisticas.png").toExternalForm()));
+        imvEstadisticas = new ImageView("estadisticas.png");
         imvEstadisticas.setFitWidth(200);
         imvEstadisticas.setFitHeight(200);
 
-        imvBD = new ImageView(new Image(getClass().getResource("backup.png").toExternalForm()));
+        imvBD = new ImageView("backup.png");
         imvBD.setFitWidth(200);
         imvBD.setFitHeight(200);
 
