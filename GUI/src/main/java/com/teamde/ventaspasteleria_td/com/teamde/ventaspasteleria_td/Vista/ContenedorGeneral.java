@@ -6,16 +6,19 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 //Panel inicial tras desbloqueo
 public class ContenedorGeneral extends BorderPane {
     MenuExpandible menuExpandible = new MenuExpandible();
     TabPane tabPane = new TabPane();
+    Stage stage;
 
-    public ContenedorGeneral(){
+    public ContenedorGeneral(Stage stage1){
+        this.stage=stage1;
         Tab tab = new Tab("Apps");
         StackPane layout = new StackPane();
-        LanzadorSecciones aplicaciones = new LanzadorSecciones(tabPane, tab);
+        LanzadorSecciones aplicaciones = new LanzadorSecciones(tabPane, tab,stage);
         layout.getChildren().add(aplicaciones);
         tab.setContent(layout);
         //tab.setClosable(false);
@@ -27,7 +30,7 @@ public class ContenedorGeneral extends BorderPane {
         newTab.setOnSelectionChanged(e->{
             Tab nuevoTab = new Tab("Apps"+tabPane.getTabs().size());
             StackPane nuevoLayout = new StackPane();
-            LanzadorSecciones nuevasAplicaciones = new LanzadorSecciones(tabPane, nuevoTab);
+            LanzadorSecciones nuevasAplicaciones = new LanzadorSecciones(tabPane, nuevoTab, stage);
             nuevoTab.setContent(nuevasAplicaciones);
             tabPane.getTabs().add(tabPane.getTabs().size()-1, nuevoTab);
             tabPane.getSelectionModel().select(tabPane.getTabs().size()-2);

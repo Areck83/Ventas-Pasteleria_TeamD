@@ -115,7 +115,7 @@ public class Login extends BorderPane {
             }
             if(errores.equals("")){
                 Stage stage1 = new Stage();
-                Pane menu = new ContenedorGeneral();
+                Pane menu = new ContenedorGeneral(stage);
                 Rectangle2D screenBounds = Screen.getPrimary().getBounds();
                 Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
                 //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());

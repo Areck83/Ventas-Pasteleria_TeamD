@@ -4,6 +4,8 @@ import com.teamde.ventaspasteleria_td.Vista.ContenedorEstadisticas;
 import com.teamde.ventaspasteleria_td.Vista.ContenedorProveedores;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -14,6 +16,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class LanzadorSecciones extends BorderPane {
     Background fondoDashboard = new Background(new BackgroundFill(Color.valueOf("E6D5CE"), new CornerRadii(0), new Insets(0)));
@@ -52,12 +56,14 @@ public class LanzadorSecciones extends BorderPane {
 
     TabPane tabPane;
     Tab tab;
+    Stage stage;
 
     public LanzadorSecciones(){
         inicializarComponentes(tabPane, tab);
     }
 
-    public LanzadorSecciones(TabPane tabPane, Tab tab){
+    public LanzadorSecciones(TabPane tabPane, Tab tab, Stage stage){
+        this.stage=stage;
         this.tabPane = tabPane;
         this.tab = tab;
         inicializarComponentes(tabPane, tab);
@@ -128,9 +134,7 @@ public class LanzadorSecciones extends BorderPane {
         btnUsuarios.setMaxWidth(200);
         btnUsuarios.setMinWidth(200);
         btnUsuarios.setOnAction(e ->{
-            //ContenedorAdminUsuarios adminUsu = new ContenedorAdminUsuarios();
-            //tab.setContent(adminUsu);
-            //tab.setText("Usuarios");
+            crearPantallaUsuarios();
         });
 
         btnIngredientes = new Button("");
@@ -186,5 +190,18 @@ public class LanzadorSecciones extends BorderPane {
         contenedorIconos.getChildren().addAll(contProveedores, contUsuarios, contIngredientes,contEstadisticas, contBD);
         setBackground(fondoDashboard);
         setCenter(contenedorIconos);
+    }
+
+    private void crearPantallaUsuarios() {
+        ContenedorUsuarios adminUsu = new ContenedorUsuarios();
+        Stage stage2 = new Stage();
+        Pane menu = new PantallaTrabajador();
+        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        Scene scene = new Scene(menu, 900.0, 500.0);
+        //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+        stage2.setTitle("Login");
+        stage2.setScene(scene);
+        stage2.setResizable(false);
+        stage2.show();
     }
 }
