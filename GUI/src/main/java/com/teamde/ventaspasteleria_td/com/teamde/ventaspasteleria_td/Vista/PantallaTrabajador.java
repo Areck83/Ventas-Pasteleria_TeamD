@@ -19,12 +19,10 @@ public class PantallaTrabajador extends BorderPane {
    private TableView tablaUsuarios;
     TabPane tabPane;
     Tab tab;
-    Stage stage;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaTrabajador(TabPane tabPane, Tab tab, Stage stage) {
+    public PantallaTrabajador(TabPane tabPane, Tab tab) {
         getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        this.stage=stage;
         this.tabPane = tabPane;
         this.tab = tab;
         this.inicializarComponentes();
@@ -97,7 +95,7 @@ public class PantallaTrabajador extends BorderPane {
 
     private void crearUsuario(){
         Stage ventanaUsuario = new Stage();
-        Pane root = new ContenedorUsuarios();
+        Pane root = new PantallaAgregarUsuarios();
         Scene escena = new Scene(root, 400, 300);
         //escena.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         ventanaUsuario.setScene(escena);

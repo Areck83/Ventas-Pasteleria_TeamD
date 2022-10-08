@@ -2,11 +2,12 @@ package com.teamde.ventaspasteleria_td.Vista;
 
 import com.teamde.ventaspasteleria_td.Modelo.Ingrediente;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,14 @@ public class PantallaIngrediente extends BorderPane {
     private Button bAgregarIngrediente;
     private HBox barra;
    private TableView<Ingrediente> tablaIngrediente;
+    TabPane tabPane;
+    Tab tab;
     //private ObservableList<Pastel> pasteles;
 
-    public PantallaIngrediente() {
+    public PantallaIngrediente(TabPane tabPane, Tab tab) {
+        getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        this.tabPane = tabPane;
+        this.tab = tab;
         this.inicializarComponentes();
     }
 
@@ -47,7 +53,7 @@ public class PantallaIngrediente extends BorderPane {
         this.bAgregarIngrediente = new Button("Agregar Ingrediente");
         this.bAgregarIngrediente.getStyleClass().add("cssBoton");
         this.bAgregarIngrediente.setOnAction((evtm) -> {
-           // this.crearPastel();
+           this.agregarIngrediente();
         });
         this.barra = new HBox();
         this.barra.setSpacing(200.0);
@@ -55,6 +61,20 @@ public class PantallaIngrediente extends BorderPane {
         this.barra.getChildren().addAll(lTitulo, bAgregarIngrediente);
         this.setTop(barra);
         this.setLeft(tablaIngrediente);
+    }
+
+    private void agregarIngrediente() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaAgregarIngredientes();
+        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        Scene scene = new Scene(menu, 500.0, 400.0);
+        //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Agregar Ingrediente");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+        stage.setMaximized(false);
+        stage.show();
     }
     //private void editarPastel(Trabajador usuario, int seleccion) {
     /*private void editarUsuario() {

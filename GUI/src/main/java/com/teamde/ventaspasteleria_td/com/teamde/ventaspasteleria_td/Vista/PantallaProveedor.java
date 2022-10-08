@@ -2,13 +2,11 @@ package com.teamde.ventaspasteleria_td.Vista;
 
 import com.teamde.ventaspasteleria_td.Modelo.Proveedor;
 import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -67,13 +65,15 @@ public class PantallaProveedor extends BorderPane {
 
     private void crearProveedor() {
         Stage stage = new Stage();
-        Pane menu = new ContenedorProveedores();
+        Pane menu = new PantallaAgregarProveedores();
         //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        Scene scene = new Scene(menu, 900.0, 500.0);
+        Scene scene = new Scene(menu, 500.0, 400.0);
         //scene.getStylesheets().add(this.getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Nuevo Proveedor");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+        stage.setMaximized(false);
         stage.show();
     }
     //private void editarPastel(Trabajador usuario, int seleccion) {

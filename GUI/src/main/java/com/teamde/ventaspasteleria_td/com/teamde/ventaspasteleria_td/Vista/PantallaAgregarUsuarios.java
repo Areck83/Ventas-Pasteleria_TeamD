@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
-public class ContenedorUsuarios extends GridPane {
+public class PantallaAgregarUsuarios extends GridPane {
     Label etiCod;
     Label etiNom;
     Label etiTel;
@@ -19,7 +19,7 @@ public class ContenedorUsuarios extends GridPane {
     ImageView imgEliminar;
     ImageView imgConfirmar;
 
-    public ContenedorUsuarios(){
+    public PantallaAgregarUsuarios(){
         getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         inicializarComponentes();
     }

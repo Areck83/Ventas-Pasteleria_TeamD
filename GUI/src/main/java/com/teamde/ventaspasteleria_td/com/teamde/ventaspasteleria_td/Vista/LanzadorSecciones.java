@@ -1,22 +1,16 @@
 package com.teamde.ventaspasteleria_td.Vista;
 
-import com.teamde.ventaspasteleria_td.Vista.ContenedorEstadisticas;
-import com.teamde.ventaspasteleria_td.Vista.ContenedorProveedores;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class LanzadorSecciones extends BorderPane {
@@ -134,7 +128,7 @@ public class LanzadorSecciones extends BorderPane {
         btnUsuarios.setMaxWidth(200);
         btnUsuarios.setMinWidth(200);
         btnUsuarios.setOnAction(e ->{
-            PantallaTrabajador panelProv = new PantallaTrabajador(tabPane, tab, stage);
+            PantallaTrabajador panelProv = new PantallaTrabajador(tabPane, tab);
             tab.setContent(panelProv);
             tab.setText("Usuarios");
         });
@@ -144,9 +138,9 @@ public class LanzadorSecciones extends BorderPane {
         btnIngredientes.setMaxWidth(200);
         btnIngredientes.setMinWidth(200);
         btnIngredientes.setOnAction(e->{
-            //ContenedorIngredientes panelIngred = new ContenedorIngredientes();
-            //tab.setContent(panelIngred);
-            //tab.setText("Ingredientes");
+            PantallaIngrediente panelIngred = new PantallaIngrediente(tabPane, tab);
+            tab.setContent(panelIngred);
+            tab.setText("Ingredientes");
         });
 
         btnEstadisticas = new Button("");
